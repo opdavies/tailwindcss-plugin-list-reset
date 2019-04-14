@@ -30,7 +30,7 @@ expect.extend({
   toMatchCss: cssMatcher
 })
 
-test('it generates the class', () => {
+test('it generates the list reset class', () => {
   return generatePluginCss().then(css => {
     expect(css).toMatchCss(`
       .list-reset {
@@ -41,7 +41,7 @@ test('it generates the class', () => {
   })
 })
 
-test('it generates the class with variants', () => {
+test('it generates the list reset class with variants', () => {
   return generatePluginCss({ variants: ['hover', 'focus'] }).then(css => {
     expect(css).toMatchCss(`
       .list-reset {
