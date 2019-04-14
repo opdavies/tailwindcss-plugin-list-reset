@@ -1,0 +1,21 @@
+{
+  "name": "tailwindcss-list-reset",
+  "version": "1.0.0",
+  "description": "Re-adds the `list-reset` utility that was removed prior to Tailwind 1.0.0.",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": ["tailwindcss", "tailwindcss-plugin"],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "lodash": "^4.17.11",
+    "postcss": "^7.0.14",
+    "tailwindcss": "^1.0.0-beta.4"
+  },
+  "devDependencies": {
+    "jest": "^24.7.1",
+    "jest-matcher-css": "^1.0.3"
+  }
+}
