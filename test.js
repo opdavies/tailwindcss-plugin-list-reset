@@ -35,7 +35,7 @@ test('it generates the list reset class', () => {
     expect(css).toMatchCss(`
       .list-reset {
         list-style: none;
-        padding: 0;
+        padding: 0
       }
     `)
   })
@@ -46,15 +46,15 @@ test('it generates the list reset class with variants', () => {
     expect(css).toMatchCss(`
       .list-reset {
         list-style: none;
-        padding: 0;
+        padding: 0
       }
       .hover\\:list-reset:hover {
         list-style: none;
-        padding: 0;
+        padding: 0
       }
       .focus\\:list-reset:focus {
         list-style: none;
-        padding: 0;
+        padding: 0
       }
     `)
   })
