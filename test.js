@@ -8,7 +8,7 @@ const tailwindcss = require('tailwindcss')
 const generatePluginCss = (options = {}) => {
   return postcss(
     tailwindcss({
-      corePlugins: disableCorePlugins(),
+      corePlugins: false,
       plugins: [plugin(options)]
     })
   )
@@ -19,12 +19,6 @@ const generatePluginCss = (options = {}) => {
     return result.css
   })
 };
-
-const disableCorePlugins = () => {
-  return _.mapValues(defaultConfig.variants, plugin => {
-    return false
-  })
-}
 
 expect.extend({
   toMatchCss: cssMatcher
