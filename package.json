@@ -13,7 +13,6 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "lodash": "^4.17.11",
     "postcss": "^7.0.14",
     "tailwindcss": "^1.0.0-beta.5"
   },
