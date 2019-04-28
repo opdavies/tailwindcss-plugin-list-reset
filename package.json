@@ -10,7 +10,10 @@
     "tailwindcss",
     "tailwindcss-plugin"
   ],
-  "author": "",
+  "author": {
+    "name": "Oliver Davies",
+    "url": "https://www.oliverdavies.uk"
+  },
   "license": "MIT",
   "devDependencies": {
     "jest": "^24.7.1",
