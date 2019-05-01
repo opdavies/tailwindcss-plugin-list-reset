@@ -6,6 +6,13 @@
   "scripts": {
     "test": "jest"
   },
+  "repository": {
+    "url": "https://github.com/opdavies/tailwindcss-plugin-list-reset"
+  },
+  "bugs": {
+    "url": "https://github.com/opdavies/tailwindcss-plugin-list-reset/issues"
+  },
+  "homepage": "https://github.com/opdavies/tailwindcss-plugin-list-reset#readme",
   "keywords": [
     "tailwindcss",
     "tailwindcss-plugin"
