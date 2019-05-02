@@ -22,7 +22,7 @@ expect.extend({
 })
 
 test('it generates the list reset class', () => {
-  return generatePluginCss().then(css => {
+  generatePluginCss().then(css => {
     expect(css).toMatchCss(`
       .list-reset {
         list-style: none;
@@ -33,7 +33,7 @@ test('it generates the list reset class', () => {
 })
 
 test('it generates the list reset class with variants', () => {
-  return generatePluginCss({ variants: ['hover', 'focus'] }).then(css => {
+  generatePluginCss({ variants: ['hover', 'focus'] }).then(css => {
     expect(css).toMatchCss(`
       .list-reset {
         list-style: none;
