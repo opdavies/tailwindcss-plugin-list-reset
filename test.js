@@ -21,31 +21,35 @@ expect.extend({
 })
 
 test('it generates the list reset class', () => {
+  const output = `
+    .list-reset {
+      list-style: none;
+      padding: 0
+    }
+  `
+
   generatePluginCss().then(result => {
-    expect(result.css).toMatchCss(`
-      .list-reset {
-        list-style: none;
-        padding: 0
-      }
-    `)
+    expect(result.css).toMatchCss(output)
   })
 })
 
 test('it generates the list reset class with variants', () => {
+  const output = `
+    .list-reset {
+      list-style: none;
+      padding: 0
+    }
+    .hover\\:list-reset:hover {
+      list-style: none;
+      padding: 0
+    }
+    .focus\\:list-reset:focus {
+      list-style: none;
+      padding: 0
+    }
+  `
+
   generatePluginCss({ variants: ['hover', 'focus'] }).then(result => {
-    expect(result.css).toMatchCss(`
-      .list-reset {
-        list-style: none;
-        padding: 0
-      }
-      .hover\\:list-reset:hover {
-        list-style: none;
-        padding: 0
-      }
-      .focus\\:list-reset:focus {
-        list-style: none;
-        padding: 0
-      }
-    `)
+    expect(result.css).toMatchCss(output)
   })
 })
