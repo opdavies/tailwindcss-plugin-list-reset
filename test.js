@@ -4,7 +4,7 @@ const plugin = require('./index')
 const postcss = require('postcss')
 const tailwindcss = require('tailwindcss')
 
-function generatePluginCss(options = {}) {
+function run(options = {}) {
   return postcss(
     tailwindcss({
       corePlugins: false,
@@ -28,7 +28,7 @@ test('it generates the list reset class', () => {
     }
   `
 
-  generatePluginCss().then(result => {
+  run().then(result => {
     expect(result.css).toMatchCss(output)
   })
 })
@@ -49,7 +49,7 @@ test('it generates the list reset class with variants', () => {
     }
   `
 
-  generatePluginCss({ variants: ['hover', 'focus'] }).then(result => {
+  run({ variants: ['hover', 'focus'] }).then(result => {
     expect(result.css).toMatchCss(output)
   })
 })
