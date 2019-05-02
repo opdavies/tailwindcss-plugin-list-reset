@@ -14,7 +14,6 @@ function generatePluginCss(options = {}) {
   .process('@tailwind utilities;', {
     from: undefined
   })
-  .then(result => result.css)
 }
 
 expect.extend({
@@ -22,8 +21,8 @@ expect.extend({
 })
 
 test('it generates the list reset class', () => {
-  generatePluginCss().then(css => {
-    expect(css).toMatchCss(`
+  generatePluginCss().then(result => {
+    expect(result.css).toMatchCss(`
       .list-reset {
         list-style: none;
         padding: 0
@@ -33,8 +32,8 @@ test('it generates the list reset class', () => {
 })
 
 test('it generates the list reset class with variants', () => {
-  generatePluginCss({ variants: ['hover', 'focus'] }).then(css => {
-    expect(css).toMatchCss(`
+  generatePluginCss({ variants: ['hover', 'focus'] }).then(result => {
+    expect(result.css).toMatchCss(`
       .list-reset {
         list-style: none;
         padding: 0
