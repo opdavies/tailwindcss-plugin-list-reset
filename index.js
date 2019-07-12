@@ -1,8 +1,11 @@
-module.exports = (variants) => ({ addUtilities }) => {
-  addUtilities({
-    '.list-reset': {
-      listStyle: 'none',
-      padding: 0
-    }
-  }, variants)
+module.exports = variants => ({ addUtilities }) => {
+  addUtilities(
+    {
+      '.list-reset': {
+        listStyle: 'none',
+        padding: 0,
+      },
+    },
+    variants
+  )
 }
