@@ -1,20 +1,6 @@
 const cssMatcher = require('jest-matcher-css')
-const defaultConfig = require('tailwindcss/defaultConfig')
 const plugin = require('./index')
-const postcss = require('postcss')
-const tailwindcss = require('tailwindcss')
-
-function run(options = {}) {
-  return postcss(
-    tailwindcss({
-      corePlugins: false,
-      plugins: [plugin(options)]
-    })
-  )
-  .process('@tailwind utilities;', {
-    from: undefined
-  })
-}
+const { generateUtilities } = require('tailwindcss-plugin-test-helpers')
 
 expect.extend({
   toMatchCss: cssMatcher
@@ -28,8 +14,9 @@ test('it generates the list reset class', () => {
     }
   `
 
-  run().then(result => {
+  generateUtilities(plugin).then(result => {
     expect(result.css).toMatchCss(output)
+    expect(result.warnings().length).toBe(0)
   })
 })
 
@@ -49,7 +36,8 @@ test('it generates the list reset class with variants', () => {
     }
   `
 
-  run({ variants: ['hover', 'focus'] }).then(result => {
+  generateUtilities(plugin, { variants: ['hover', 'focus'] }).then(result => {
     expect(result.css).toMatchCss(output)
+    expect(result.warnings().length).toBe(0)
   })
 })
