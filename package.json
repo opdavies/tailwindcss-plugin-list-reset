@@ -4,7 +4,8 @@
   "description": "Re-adds the `list-reset` utility that was removed prior to Tailwind 1.0.0.",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "style": "eslint .",
+    "test": "jest && eslint ."
   },
   "repository": {
     "url": "https://github.com/opdavies/tailwindcss-plugin-list-reset"
@@ -23,9 +24,14 @@
   },
   "license": "MIT",
   "devDependencies": {
+    "eslint": "^6.0.1",
+    "eslint-config-postcss": "^2.0.2",
+    "eslint-config-prettier": "^6.0.0",
+    "eslint-plugin-prettier": "^3.0.1",
     "jest": "^24.7.1",
     "jest-matcher-css": "^1.0.3",
     "postcss": "^7.0.14",
+    "prettier": "^1.18.2",
     "tailwindcss": "^1.0.0-beta.5",
     "tailwindcss-plugin-test-helpers": "^1.0.0"
   }

@@ -3,7 +3,7 @@ const plugin = require('./index')
 const { generateUtilities } = require('tailwindcss-plugin-test-helpers')
 
 expect.extend({
-  toMatchCss: cssMatcher
+  toMatchCss: cssMatcher,
 })
 
 test('it generates the list reset class', () => {
